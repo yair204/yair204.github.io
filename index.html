@@ -1,1 +1,52 @@
-"hello world" 
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  yair</title>
+  
+  
+  
+  
+  
+</head>
+
+<body>
+  <input type="text" id="a1">
+
+
+
+<button onclick="digit()">click me</button>
+<script>
+function digit()
+{
+var text = document.getElementById("a1").value;
+var str = text;
+var m = 10000000;
+var arr = [];
+ var sum=0; 
+
+for (var i = 0;i < 8; i++)
+  {
+arr.push(Math.floor(text/m)*(i%2+1));
+text = (text%m);
+m = m/10; 
+    
+   if(arr[i]>9) 
+    sum += Math.floor(arr[i]/10) + arr[i]%10;
+    else
+      sum += arr[i];
+    
+  }
+
+
+var x4 = Math.floor(sum/10) + 1;
+
+var x5 =  x4 * 10 - sum;
+
+document.getElementById("a1").value = document.getElementById("a1").innerHTML = str + x5;
+}
+</script>
+  
+  
+</body>
+</html>
